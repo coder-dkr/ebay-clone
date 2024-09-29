@@ -15,7 +15,7 @@ const Data = [
         subtitle : "Each bid brings you closer to completing your collection.",
         btntext: "Go to auctions",
         image: "/banner-cook.webp",
-        theme : { isFull : false ,showShade : false ,  text : '#553b06' ,  bgBtn : "white",  bg : 'ffbd14' , color : "none", dot : "white"}
+        theme : { isFull : false ,showShade : false ,  text : '#553b06' ,  bgBtn : "white",  bg : '#ffbd14' , color : "none", dot : "white"}
     },
     {
         title:"No fakes. No fraud. No doubt.",
@@ -58,14 +58,19 @@ const Carousel = () => {
   return (
     <>
      <div>
-        <div className={`w-full relative h-[22.5rem] rounded-3xl my-6 bg-no-repeat overflow-hidden duration-300  ${ Livedata.theme.isFull ? "bg-cover bg-center" : `bg-contain bg-right bg-[#${Livedata.theme.bg}]`}`}
-        style={{backgroundImage : `url("${Livedata.image}")`}}
+        <div className={`w-full relative h-[22.5rem] rounded-3xl my-6 bg-no-repeat overflow-hidden duration-300  ${ Livedata.theme.isFull ? "bg-cover bg-center" : `bg-contain bg-right`}`}
+        style={{backgroundImage : `url("${Livedata.image}")`,
+                backgroundColor : Livedata.theme.bg != false ? Livedata.theme.bg : '' }}
         >
 
-            <div className={`${Livedata.theme.showShade ?  'before:content-[""] before:bg-black before:h-[22.5rem] before:-top-[44%] before:-left-40 before:w-[80vh] before:-z-[10] before:absolute before:opacity-25  before:shadow-[40px_-20px_80px_50px_black]' : ''}  absolute flex flex-col items-start gap-y-3 text-[${Livedata.theme.text}] top-1/2 -translate-y-1/2 left-24  drop-shadow-2xl`}>
+            <div className={`${Livedata.theme.showShade ?  'before:content-[""] before:bg-black before:h-[22.5rem] before:-top-[44%] before:-left-40 before:w-[80vh] before:-z-[10] before:absolute before:opacity-25  before:shadow-[40px_-20px_80px_50px_black]' : ''}  absolute flex flex-col items-start gap-y-3 top-1/2 -translate-y-1/2 left-24  drop-shadow-2xl`}
+            style={{color : Livedata.theme.text}}
+            >
                 <h1 className="font-bold text-4xl w-96">{Livedata.title}</h1>
                 <p className="w-80">{Livedata.subtitle}</p>
-                <button className={`w-fit px-5 py-2 rounded-full bg-[${Livedata.theme.bgBtn}] shadow-sm font-semibold`}>{Livedata.btntext}</button>
+                <button 
+                style={{backgroundColor : Livedata.theme.bgBtn}}
+                className={`w-fit px-5 py-2 rounded-full shadow-sm font-semibold`}>{Livedata.btntext}</button>
             </div>
 
             <ul className="absolute right-10 bottom-4 flex justify-center items-center gap-x-2 ">
