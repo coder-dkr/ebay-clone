@@ -2,7 +2,7 @@ import { Bell , ShoppingCart ,ChevronDown} from 'lucide-react';
 
 const TopBar = () => {
   return (
-    <div className='flex items-center justify-between px-14 border border-solid border-gray-200 border-r-0 border-l-0 border-t-0 '>
+    <div className='sticky z-50 bg-white shadow-sm top-0  flex items-center justify-between px-14 border border-solid border-gray-200 border-r-0 border-l-0 border-t-0 '>
       <ul className='flex justify-center items-center gap-x-4 text-xs font-medium'>
         <li className='cursor-pointer'>Hi! <span className='text-blue-600 underline'>Sign in</span> or <span className='text-blue-600 underline'>register</span></li>
         <li className='cursor-pointer'>Daily Deals</li>

@@ -1,37 +1,7 @@
 import { useState ,useEffect } from "react"
 import { ChevronLeft , ChevronRight ,Pause , Play} from 'lucide-react';
+import { Data } from "../constants/constant";
 
-
-const Data = [
-    {
-        title:"Elevate your off-road experience",
-        subtitle : "Explore parts, accessories, vehicles, and more.",
-        btntext: "Shop now",
-        image: '/banner-car.webp',
-        theme : { isFull : true ,showShade : true ,  text : 'white' , bgBtn : "black",   bg : false , color : "none", dot : "white"}
-    },
-    {
-        title:"Hunt down your next card",                                                                                       
-        subtitle : "Each bid brings you closer to completing your collection.",
-        btntext: "Go to auctions",
-        image: "/banner-cook.webp",
-        theme : { isFull : false ,showShade : false ,  text : '#553b06' ,  bgBtn : "white",  bg : '#ffbd14' , color : "none", dot : "white"}
-    },
-    {
-        title:"No fakes. No fraud. No doubt.",
-        subtitle : "Expand your collection confidently with Authenticity Guarantee.",          
-        btntext: "Learn more",
-        image: "/banner-ebay.webp",
-        theme : { isFull : true , showShade : false , text : 'white' ,  bgBtn : "black",  bg : false , color : "none", dot : "white"}
-    },
-    {
-        title:"Keep it classic, make it unique",
-        subtitle : "Discover your next pre-loved luxury find on eBay.",
-        btntext: "Create your look",
-        image: "/banner-cloth.webp",
-        theme : { isFull : true , showShade : false , text : 'black' ,  bgBtn : "white",  bg : false , color : "none", dot : "white"}
-    }
-]
 
 const Carousel = () => {
     const [index, setindex] = useState(0)
@@ -45,7 +15,7 @@ const Carousel = () => {
         if(!paused){
             const intervalId = setInterval(() => {
                 setindex((prevIndex) => (prevIndex === Data.length - 1 ? 0 : prevIndex + 1));
-            }, 5000);
+            }, 4000);
             return () => clearInterval(intervalId);
         }
     }, [paused]);  
@@ -90,14 +60,6 @@ const Carousel = () => {
 
         </div>
     </div> 
-
-    <div className="flex justify-between items-center px-8 py-8 bg-gray-100 rounded-3xl mt-8">
-        <div className="flex flex-col gap-y-2">
-            <h2 className="font-bold text-2xl">Up to 60% off select Apple tech</h2>
-            <p className="text-sm font-normal">Save on iPhones, MacBooks, and more with a one-year warranty.</p>
-        </div>
-        <button className="bg-black text-white py-3 px-6 font-bold rounded-full">Shop now</button>
-    </div>
     </>
   )
 }
