@@ -2,7 +2,7 @@ import { Facebook ,Twitter } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <div className='bg-[#f7f7f7] border border-solid border-gray-300 border-b-0 border-r-0 border-l-0 mt-20 p-12 pb-8 flex flex-col gap-y-12'>
+        <div className='bg-[#f7f7f7] border border-solid border-gray-300 border-b-0 border-r-0 border-l-0 mt-14 p-12 pb-8 flex flex-col gap-y-12'>
             <div className='flex items-start justify-between'>
                 <ul className='flex flex-col gap-y-2'>
                     <li className='text-sm text-gray-600  font-bold'>Buy</li>
